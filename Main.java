@@ -57,7 +57,7 @@ class BookstoreBook {
   @Override
   public String toString() {
     return "[" + getIsbn() + "-" + getTitle().toUpperCase() + " by " +
-      getAuthor().toUpperCase() + ", $" + String.format("%.2f", getPrice()) + " listed for $ " + String.format(" % .2 f ", getSale()) +
+      getAuthor().toUpperCase() + ", $" + String.format("%.2f", getPrice()) + " listed for $" + String.format("%.2f ", getSale()) +
       "]";
   }
 }
@@ -151,6 +151,9 @@ public class Main {
           if (sale.equalsIgnoreCase("y")) {
             System.out.println("Enter deduction percentage");
             book.setSale(((100 - sc.nextInt()) * 0.01) * book.getPrice());
+            System.out.println("Got it!");
+          } else if(sale.equalsIgnoreCase("n")){
+            book.setSale(book.getPrice());
             System.out.println("Got it!");
           }
           for (int i = 0; i < 100; i++) {
