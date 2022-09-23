@@ -105,7 +105,7 @@ class LibraryBook {
     this.title = t;
   }
   public void setIsbn(String i) {
-    this.isbn = i;
+    this.isbn = i
   }
   @Override
   public String toString() {
